@@ -1,0 +1,92 @@
+
+<!--================ SECTION 1 - PRESENTATION ================-->
+
+<section class="about-page">
+
+  <!-- Ouverture de la balise délimitant la largeur du contenu -->
+  <div class="content">
+
+    <!-- Partie de gauche : photo sur fond effet bois -->
+
+    <div class="col col-5-12 my-picture-container">
+
+      <img class="wood-frame" src="assets/images/bois-about-210.jpg" srcset="assets/images/bois-about-210.jpg 210w,
+                assets/images/bois-about-230.jpg 230w,
+                assets/images/bois-about-298.jpg 298w,
+                assets/images/bois-about-600.jpg 600w" sizes="(max-width : 330px) 210px, (max-width : 576px) 230px, (max-width : 1200px) 298px, 600px" alt="Fond effet bois">
+      <img class="my-picture" src="assets/images/photo-moi-208.jpg" srcset="assets/images/photo-moi-208.jpg 208w,
+                assets/images/photo-moi-228.jpg 228w,
+                assets/images/photo-moi-290.jpg 290w,
+                assets/images/photo-moi-672.jpg 672w" sizes="(max-width : 330px) 208px, (max-width : 576px) 228px, (max-width : 1200px) 290px, 672px" alt="Photo de Fabienne Benoit">
+
+    </div>
+
+    <div class="col col-1-12 md-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Partie de droite : Texte et bouton vers le CV -->
+
+    <div class="col col-6-12 last about-page-text-container md-col-12-12">
+
+      <h1 class="center-line">Quelques infos <br class="xs-break-text">sur moi</h1>
+
+      <div class="about-page-text">
+        <p>Je m’appelle Fabienne Benoit, j’ai 35 ans et je suis étudiante en première année en Web Development à l’IPEPS de Seraing.</p>
+        <p>Depuis le Commodore 64, j’ai toujours baigné dans l’informatique sans jamais oser en faire mon métier.
+        </p>
+        <p>Après avoir travaillé 11 ans comme infirmière responsable en milieu d’accueil, j’ai enfin sauté le pas pour me consacrer à ce qui me passionne : le développement web.</p>
+        <p>Outre le web, j’aime la musique, la lecture, la cuisine (la manger, pas la préparer), le baby-foot et les voyages.
+        </p>
+        <p>Si vous voulez en savoir plus sur mon parcours, cliquez ci-dessous et jetez un oeil à mon CV.</p>
+
+        <div><a class="btn cv-btn" href="assets/docs/cv-compressed.pdf" target="blank">Télécharger le CV</a></div>
+      </div>
+    </div>
+
+    <!-- Suppression du flottement -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+
+
+<!--=============== SECTION 2 ===============-->
+
+<!-- Section permettant de guider l'utilisateur vers la page suivante (travaux) -->
+<section class="lead-to">
+
+  <!-- Ouverture de la balise content -->
+  <div class="content lead-to-container">
+
+    <!-- Lien vers la page "Travaux" -->
+    <div class="lead-to-content">
+
+      <a [routerLink]="['/', 'page', 'works']">
+        <h2>Venez découvrir mon <br class="xs-break-text">portfolio : </h2>
+      </a>
+
+    </div>
+
+    <div class="laptop-container lead-to-content">
+
+      <a [routerLink]="['/', 'page', 'works']">
+
+        <img class="laptop" src="assets/images/laptop-200.png" srcset="assets/images/laptop-200.png 200w,
+                    assets/images/laptop-600.png 600w" sizes="(max-width : 992px) 200px, 600px" alt="Image d'un laptop">
+        <p class="text-in-laptop">travaux</p>
+
+      </a>
+
+    </div>
+
+    <!-- Suppression du flottement -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+

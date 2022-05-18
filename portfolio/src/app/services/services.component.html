@@ -1,0 +1,186 @@
+<!--================= SECTION 1 - INTRO =================-->
+
+<section class="pages-introduction">
+
+  <!-- Ouverture de la balise délimitant le contenu -->
+  <div class="content">
+
+    <div class="col col-2-12 md-col-1-12 sm-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Texte d'introduction -->
+    <div class="col col-8-12 md-col-10-12 sm-col-12-12">
+
+      <h1 class="center-line services-center-line">Mes Services et <br class="xs-break-text">Compétences</h1>
+
+      <div class="services-page-intro-text">
+        <p>Actuellement en cours de formation, vous trouverez dans cette section les services que je peux déjà vous rendre ainsi que les compétences que je suis en train d’acquérir et d’approfondir.
+        </p>
+      </div>
+    </div>
+
+    <div class="col col-2-12 last md-col-1-12 sm-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Supression du float -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+
+
+<!--============= SECTION 2 - COMPETENCES 1 =============-->
+
+<section class="services-provided skills-section-1">
+
+  <!-- Balise délimitant le contenu -->
+  <div class="content">
+
+    <h2>Compétences actuelles<br><strong>Sites web statiques</strong></h2>
+
+    <div *ngFor="let service of services; let i = index">
+
+      <!-- Première colonne de 4-12 -->
+
+      <div *ngIf="service.services_current === 1" class="col col-4-12 md-col-12-12" [ngClass]="{'last': i %3 === 2}">
+
+        <!-- Chaque colonne comprend un titre, une image et un texte apparaissant au hover avec un effet de slide -->
+
+        <div class="service-container">
+
+          <h3>{{ service.services_title }}</h3>
+
+          <div class="slide-container">
+
+            <img class="slided-over-image" *ngIf="service.services_img" [appServerImg]=" service.services_img " alt="Image représentant la compétence ou le service susmentionné(e).">
+
+            <div class="slide" [ngClass]="{'slide-left': i %3 === 0,'slide-top': i%3 === 1, 'slide-right': i%3 === 2}">
+              <p class="slide-text">{{ service.services_description }}</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Fin de la 1ère colonne de 4-12 -->
+      </div>
+
+    </div>
+
+    <!-- Supression du float -->
+    <div class="clear"></div>
+    <div class="m-b-big"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+  <!-- Fermeture de la section 2 -->
+</section>
+
+
+<!--============== SECTION 3 - COMPETENCES 2 ==============-->
+
+
+<section class="services-provided skills-section-2">
+
+  <!-- Balise délimitant le contenu -->
+  <div class="content">
+
+    <h2>Compétences en cours d'acquisition<br><strong>Sites web interactifs et dynamiques</strong></h2>
+
+    <div *ngFor="let service of services; let i = index">
+
+      <!-- Première colonne de 4-12 -->
+
+      <div *ngIf="service.services_current === 0" class="col col-4-12 md-col-12-12" [ngClass]="{'last': i %3 === 2}">
+
+        <!-- Chaque colonne comprend un titre, une image et un texte apparaissant au hover avec un effet de slide -->
+
+        <div class="service-container">
+
+          <h3>{{ service.services_title }}</h3>
+
+          <div class="slide-container">
+
+            <img class="slided-over-image" *ngIf="service.services_img" [appServerImg]=" service.services_img " alt="Image représentant la compétence ou le service susmentionné(e).">
+
+            <div class="slide" [ngClass]="{'slide-left': i %3 === 0,'slide-bottom': i%3 === 1, 'slide-right': i%3 === 2}">
+              <p class="slide-text">{{ service.services_description }}</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Fin de la 1ère colonne de 4-12 -->
+      </div>
+
+    </div>
+
+    <!-- Supression du float -->
+    <div class="clear"></div>
+
+    <!-- Espace entre les sections  -->
+    <div class="m-b-big"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+  <!-- Fermeture de la section 3 -->
+</section>
+
+<!--================= SECTION 4 =================-->
+
+<!-- Section permettant de guider l'utilisateur vers la page suivante (contact) -->
+<section class="lead-to white-theme">
+
+  <!-- Ouverture de la balise content -->
+  <div class="content lead-to-container">
+
+    <!-- Lien vers la page "Contact" -->
+
+    <div class="lead-to-content">
+
+      <a [routerLink]="['/','page','contact']">
+        <h2>Let's work together !</h2>
+      </a>
+
+    </div>
+
+    <div class="laptop-container lead-to-content">
+
+      <a [routerLink]="['/','page','contact']">
+
+        <img class="laptop" src="assets/images/laptop-200.png" srcset="assets/images/laptop-200.png 200w,
+                    assets/images/laptop-600.png 600w" sizes="(max-width : 992px) 200px, 600px" alt="Image d'un laptop">
+
+        <p class="text-in-laptop text-in-laptop-services">contact</p>
+
+      </a>
+
+    </div>
+
+    <!-- Suppression du float -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+
+<!--=============== SECTION 5 - UP ==============-->
+
+<section class="up">
+
+  <h3>Revenir en haut de la page</h3>
+
+  <div class="content">
+
+    <!-- Lien permettant de revenir facilement en haut de la page -->
+    <a href="/page/services#"><img class="up-icon" src="assets/images/up.png" alt="Flèche vers le haut"></a>
+
+  </div>
+
+</section>

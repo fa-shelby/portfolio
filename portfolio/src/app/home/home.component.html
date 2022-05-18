@@ -1,0 +1,240 @@
+<!--================= INTRO BACKGROUND =================-->
+
+<div class="homepage-background">
+
+  <!-- Image en cover à part et pas dans le CSS pour pouvoir utliser l'attribut srcset -->
+  <img class="homepage-intro-background" src="assets/images/accueil-992.jpg" srcset="assets/images/accueil-992.jpg 992w,
+     assets/images/accueil-1200.jpg 1200w,
+     assets/images/accueil-1694.jpg 1694w" sizes="100vw" alt="Bureau en bois avec un clavier d'ordinateur, une souris, un smartphone et du matériel de bureau">
+
+  <!-- Couche transparente noire devant l'image de fond de l'intro -->
+  <div class="black-layer">
+
+    <!--================= HEADER =================-->
+    <header class="homepage-header">
+
+      <!-- Logo et menu : en full-width puis dans une largeur de contenu plus large sur les écrans très grands -->
+      <div class="large-content">
+
+        <!-- LOGO -->
+
+        <a [routerLink]="['/']"><img class="logo homepage-logo" src="assets/images/logo.svg" alt="Logo de Fabienne BENOIT"></a>
+
+        <!-- MENU -->
+
+        <!-- L'id au niveau de la navigation va permettre de créer une ancre pour remonter ici quand l'utilisateur est en bas de la page -->
+        <nav id="navbar">
+
+          <!-- Checkbox pour faire un menu hamburger pour les petits écrans -->
+          <input id="hamburger-menu" type="checkbox" />
+          <label class='menu-button-container' for="hamburger-menu">
+            <span class='menu-button'></span>
+          </label>
+
+          <ul class="menu">
+            <li><a class="current" [routerLink]="['/', 'home']">Accueil</a></li>
+            <li><a [routerLink]="['/', 'page', 'about']">About</a></li>
+            <li><a [routerLink]="['/', 'page', 'works']">Travaux</a></li>
+            <li><a [routerLink]="['/', 'page', 'services']">Services</a></li>
+            <li><a [routerLink]="['/', 'page', 'contact']">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Suppression du flottement -->
+        <div class="clear"></div>
+
+        <!-- Fin de large content -->
+      </div>
+
+    </header>
+
+    <!--================= SECTION 1 - INTRO =================-->
+
+    <section class="homepage-intro">
+
+      <!-- Espace entre la navigation et le texte d'introduction -->
+      <div class="separator"></div>
+
+      <!-- Ouverture de la balise délimitant la largeur du contenu -->
+      <div class="content">
+
+        <div class="col col-1-12 md-col-0-12">
+          <p></p>
+        </div>
+
+        <!-- Ligne verticale à gauche du texte -->
+        <div class="col col-1-12 vertical-line md-col-2-12 sm-col-0-12">
+        </div>
+
+        <!-- Texte d'introduction -->
+        <div class="col col-8-12 md-col-8-12 sm-col-12-12">
+          <div>
+            <p class="intro-text-uppercase">Bonjour, je suis</p>
+            <h1><strong>Fabienne Benoit</strong><br><span class="intro-text-uppercase">Étudiante
+                                    en </span><br class="xs-break-text"><strong>Web
+              Development</strong>
+            </h1>
+            <p class="intro-text-uppercase">Bienvenue sur mon <strong>Portfolio</strong></p>
+            <p>Bonne visite !</p>
+          </div>
+        </div>
+
+        <div class="col col-2-12 last md-col-2-12 sm-col-0-12">
+          <p></p>
+        </div>
+
+        <!-- Suppression du flottement -->
+        <div class="clear"></div>
+
+        <!-- Fermeture de la balise content -->
+      </div>
+
+      <!-- Icône web sous le texte d'intro -->
+      <img class="web" src="assets/images/web-50.png" srcset="assets/images/web-50.png 50w,
+            assets/images/web-100.png 100w" sizes="(max-width : 576px) 50px, 100px" alt="Icône représentant le web">
+
+      <!-- Fin de la section d'introduction -->
+    </section>
+
+    <!-- Fin de la couche transparente noire -->
+  </div>
+
+  <!-- Fin de homepage-background -->
+</div>
+
+<!--================= SECTION 1 - VERS ABOUT =================-->
+
+<!-- Section me présentant brièvement et guidant l'utilisateur vers la page "About" -->
+<section class="homepage-about">
+
+  <!-- Ouverture de la balise content -->
+  <div class="content">
+
+    <!-- Contenu de gauche : texte et bouton -->
+    <div class="col col-5-12 md-col-12-12">
+
+      <h2 class="line-right md-center-line">Introduction</h2>
+
+      <div class="homepage-about-text">
+        <p>Passionnée d’informatique, j’ai repris en 2021 des études en développement web dans le cadre d’une reconversion professionnelle.</p>
+        <p>Je vous en dis plus dans la section “About” de ce portfolio. Suivez-moi !</p>
+
+        <!-- Bouton vers la page "About" -->
+        <div><a class="btn more-about-me-btn" [routerLink]="['/', 'page', 'about']">More about me</a></div>
+
+      </div>
+
+    </div>
+
+    <div class="col col-1-12 md-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Contenu de droite : avatar -->
+
+    <div class="col col-6-12 last md-col-12-12 ">
+      <div class="avatar-complete">
+        <img class="wood" src="assets/images/bois-accueil-175.jpg" srcset="assets/images/bois-accueil-175.jpg 175w,
+                    assets/images/bois-accueil-205.jpg 205w,
+                    assets/images/bois-accueil-287.jpg 287w,
+                    assets/images/bois-accueil-500.jpg 500w" sizes="(max-width : 330px) 175px,
+                    (max-width : 576px) 205px,
+                    (max-width : 1200px) 287px, 500px" alt="Fond effet bois">
+        <img class="avatar" src="assets/images/avatar-205.png" srcset="assets/images/avatar-205.png 205w,
+                    assets/images/avatar-239.png 239w,
+                    assets/images/avatar-363.png 363w,
+                    assets/images/avatar-630.png 630w" sizes="(max-width : 330px) 205px,
+                    (max-width : 576px) 239px,
+                    (max-width : 1200px) 363px, 630px" alt="Mon avatar">
+        <p class="hello">Hello !</p>
+      </div>
+    </div>
+
+    <!-- Suppression du flottement -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+
+
+<!--============= SECTION 2 - VERS TRAVAUX ===============-->
+
+<!-- Section présentant brièvement ce que je fais et guidant l'utilisateur vers la page "Travaux" -->
+<section class="homepage-works">
+
+  <!-- Ouverture de la balise content  -->
+
+  <div class="content">
+
+    <!-- Partie de gauche : image de la page web "Relax" -->
+
+    <div class="col col-4-12 md-col-12-12">
+      <img class="relax" src="assets/images/relax-200.png" srcset="assets/images/relax-200.png 200w,
+                assets/images/relax-254.png 254w,
+                assets/images/relax-400.png 400w" sizes="(max-width : 576px) 200px, (max-width : 1200px) 254px, 400px" alt="Image d'une page web sur le thème de la plage">
+    </div>
+
+    <div class="col col-2-12 md-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Partie de droite : texte -->
+
+    <div class="col col-6-12 last md-col-12-12">
+
+      <h2 class="center-line white-center-line">Projets réalisés</h2>
+
+      <p>Étudiante en développement web full stack, j’apprends à réaliser des sites à la fois fonctionnels, esthétiques, ergonomiques et responsives.</p>
+      <p>Je vous fais découvrir quelques-uns de mes projets dans la section “Travaux”.</p>
+
+      <!-- Bouton vers la page "Travaux" -->
+      <div><a class="btn white-border-btn btn-to-works" [routerLink]="['/','page', 'works']">Travaux</a></div>
+
+    </div>
+
+    <!-- Suppression du flottement -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+  <!-- Fond de couleur clair sous le texte, en full-width à droite -->
+  <div class="unequal-horizontal-background"></div>
+
+</section>
+
+<!--================= SECTION 3 - UP =================-->
+
+<!-- Section qui permettra de revenir facilement au début de la page -->
+<section class="home-up">
+
+  <!-- Ouverture de la balise content -->
+  <div class="content home-up-container">
+
+    <!-- Div contenant une ancre pour revenir au niveau de la barre de navigation (fonctionne aussi avec un # simple) -->
+    <div class="home-up-content">
+
+      <a href="#navbar">
+        <h3>Revenir en haut <br class="xxs-break-text">de la page</h3>
+      </a>
+
+    </div>
+
+    <div class="home-up-content">
+
+      <a href="#navbar">
+        <img class="home-up-icon" src="assets/images/up.png" alt="Flèche vers le haut">
+      </a>
+
+    </div>
+
+    <!-- Suppression du flottement -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+

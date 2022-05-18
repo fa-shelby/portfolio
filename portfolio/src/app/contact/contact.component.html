@@ -1,0 +1,221 @@
+
+
+<!--================= SECTION 1 - INTRO ====================-->
+
+<section class="pages-introduction">
+
+  <!-- Ouverture de la balise délimitant la largeur du contenu -->
+  <div class="content">
+
+    <div class="col col-3-12 md-col-2-12 sm-col-1-12 xs-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Texte d'introduction -->
+    <div class="col col-6-12 md-col-8-12 sm-col-10-12 xs-col-12-12">
+
+      <h1 class="center-line">Me contacter</h1>
+
+      <p>Si mon profil vous intéresse, vous pouvez me joindre par mail, téléphone ou via le formulaire de contact ci-dessous.<br>Je vous répondrai avec plaisir.</p>
+
+    </div>
+
+    <div class="col col-3-12 last md-col-2-12 sm-col-1-12 xs-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Supression du float -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+
+<!--============== SECTION 2 - ME CONTACTER =================-->
+
+<section class="contact-me">
+
+  <!-- Ouverture de la balise content -->
+  <div class="content">
+
+    <!-- Partie de gauche : informations de contact et map -->
+
+    <div class="col col-6-12 md-col-12-12">
+
+      <div class="contact-details-map-container">
+
+        <h2 class="line-right md-center-line">Mes coordonnées</h2>
+
+        <!-- Informations de contact -->
+        <div class="col col-3-12 contact-details md-col-4-12 sm-col-5-12">
+
+          <!-- Adresse -->
+          <div>
+            <img class="home" src="assets/images/home.png" alt="Icône d'une maison">
+            <p *ngIf="details">{{ details[0].details_address_line1 }}<br>{{ details[0].details_address_line2 }}</p>
+
+          </div>
+
+          <!-- Numéro de GSM -->
+          <div>
+            <img class="phone" src="assets/images/phone.png" alt="Icône d'un téléphone">
+            <p *ngIf="details">{{ details[0].details_number }}</p>
+          </div>
+
+          <!-- E-mail -->
+          <div>
+            <img class="mail" src="assets/images/mail.png" alt="Icône d'une enveloppe">
+            <p *ngIf="details">{{ details[0].details_email }}</p>
+          </div>
+
+          <!-- Fermeture de la première colonne de 3-12 -->
+        </div>
+
+        <!-- Carte -->
+        <div class="col col-3-12 last md-col-4-12 sm-col-5-12">
+
+          <!-- Google map de chez moi -->
+          <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2532.5880974668726!2d5.522337677291686!3d50.59760880089643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f9a9d5ad7a49%3A0x27ae8bd5f4767b75!2sRue%20du%20Fort%2044%2C%204100%20Seraing!5e0!3m2!1sfr!2sbe!4v1646138707063!5m2!1sfr!2sbe"
+                  width="250" height="420" allowfullscreen="" loading="lazy"></iframe>
+
+          <!-- Fin de la 2e colonne de 3-12 -->
+        </div>
+
+      </div>
+
+      <!-- Fin de la colonne de 6-12 -->
+    </div>
+
+    <div class="col col-1-12 md-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Partie de droite : formulaire de contact -->
+    <div class="col col-5-12 last md-col-12-12">
+
+      <div class="form-container">
+
+        <h2 class="line-right md-center-line">Formulaire de contact</h2>
+
+        <!-- Formulaire -->
+        <form [formGroup]="contactForm" (ngSubmit)="formSubmit()">
+
+          <div class="form-content">
+
+            <!-- Nom -->
+            <div class="spacing">
+              <label for="lastname">Nom :</label>
+              <input type="text" name="lastname" id="lastname" formControlName="lastname" [ngClass]="{'is-invalid': submitted && !contactForm.get('lastname')?.valid}">
+            </div>
+            <div *ngIf="submitted && contactForm.get('lastname')?.errors" class="form-errors spacing">
+              <div *ngIf="contactForm.get('lastname')?.hasError('required')">Merci d'indiquer votre nom de famille.</div>
+              <div *ngIf="contactForm.get('lastname')?.hasError('maxlength')">Le nom de famille ne peut pas faire plus de 45 caractères.</div>
+            </div>
+
+            <!-- Prénom -->
+            <div class="spacing">
+              <label for="firstname">Prénom :</label>
+              <input type="text" name="firstname" id="firstname" formControlName="firstname" [ngClass]="{'is-invalid': submitted && !contactForm.get('firstname')?.valid}">
+            </div>
+            <div *ngIf="submitted && contactForm.get('lastname')?.errors" class="form-errors spacing">
+              <div *ngIf="contactForm.get('firstname')?.hasError('required')">Merci d'indiquer votre prénom.</div>
+              <div *ngIf="contactForm.get('firstname')?.hasError('maxlength')">Le prénom ne peut pas faire plus de 45 caractères.</div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="spacing">
+              <label for="email">Mail :</label>
+              <input type="email" name="email" id="email" formControlName="email" [ngClass]="{'is-invalid': submitted && !contactForm.get('email')?.valid}">
+            </div>
+
+            <div *ngIf="submitted && contactForm.get('email')?.errors" class="form-errors spacing">
+              <div *ngIf="contactForm.get('email')?.hasError('required')">Merci d'indiquer une adresse mail où vous joindre.</div>
+              <div *ngIf="contactForm.get('email')?.hasError('maxlength')">L'email ne peut pas faire plus de 45 caractères.</div>
+              <div *ngIf="contactForm.get('email')?.hasError('email')">Le format de l'email doit être valide.</div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message">Votre message :</label><br>
+              <textarea name="message" id="message" cols="30" rows="10" formControlName="message" [ngClass]="{'is-invalid': submitted && !contactForm.get('message')?.valid}"></textarea>
+              <div *ngIf="submitted && contactForm.get('message')?.errors" class="form-errors">
+                <div *ngIf="contactForm.get('message')?.hasError('required')">Merci d'écrire un message avant d'envoyer le formulaire.</div>
+                <div *ngIf="contactForm.get('message')?.hasError('maxlength')">Merci de ne pas dépasser 1000 caractères pour le message.</div>
+               </div>
+            </div>
+
+            <!-- Bouton d'envoi -->
+            <div>
+              <input type="submit" value="Envoyer" />
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- Fin de la colonne de 5-12 -->
+    </div>
+
+    <!-- Supression du float -->
+    <div class="clear"></div>
+
+    <!-- Fin de la balise content -->
+  </div>
+
+</section>
+
+
+<!--============== SECTION 3 =====================-->
+
+<!-- Section permettant de remercier l'utilisateur et de le guider vers l'accueil -->
+<section class="lead-to">
+
+  <!-- Ouverture de la balise content -->
+  <div class="content lead-to-container">
+
+    <!-- Ancre vers la page d'accueil -->
+
+    <div class="lead-to-content">
+
+      <a [routerLink]="['/']">
+        <h2>Merci de votre visite !</h2>
+      </a>
+
+    </div>
+
+    <div class="laptop-container lead-to-content">
+
+      <a [routerLink]="['/']">
+
+        <img class="laptop" src="assets/images/laptop-200.png" srcset="assets/images/laptop-200.png 200w,
+                    assets/images/laptop-600.png 600w" sizes="(max-width : 992px) 200px, 600px" alt="Image d'un laptop">
+
+        <p class="text-in-laptop text-in-laptop-contact">accueil</p>
+
+      </a>
+
+    </div>
+
+    <!-- Fin de la balise content -->
+  </div>
+
+</section>
+
+<!--==================== SECTION 4 : UP ======================-->
+
+<!-- Section permettant à l'utilisateur de revenir rapidement en haut de la page -->
+<section class="up white-theme">
+
+  <h3>Revenir en haut de la page</h3>
+
+  <div class="content">
+
+    <!-- Ancre vers la barre de navigation -->
+    <a href="/page/contact#"><img class="up-icon" src="assets/images/up.png" alt="Flèche vers le haut"></a>
+
+  </div>
+
+</section>

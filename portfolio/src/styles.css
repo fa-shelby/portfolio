@@ -1,0 +1,2778 @@
+/*
+font-family: 'Poppins', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Great Vibes', cursive;
+*/
+
+
+/* ------- PLAN DU CSS ---------
+
+- GENERAL
+- COLONNES
+- BOUTONS (commun)
+- LIGNES AUTOUR DES TITRES (idem)
+- HEADER
+- NAVIGATION
+- NAVIGATION MOBILE
+- SECTIONS : GENERAL
+- SECTION D'INTRODUCTION
+- ACCUEIL - SECTION 1
+- ACCUEIL - SECTION 2
+- ABOUT - SECTION 1
+- TRAVAUX - SECTIONS 2 ET 3
+- TRAVAUX - ANIMATIONS
+- SERVICES - SECTIONS 2 ET 3
+- SERVICES - ANIMATIONS
+- CONTACT - SECTION 2
+- LEAD TO (THE NEXT PAGE)
+- UP
+- FOOTER
+
+------------------------------ */
+
+
+/***************
+    GENERAL
+***************/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* Reset de la page */
+  /* scroll-behavior: smooth; */
+  /* Adoucit le scroll */
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  /* "indique au navigateur de prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur." */
+}
+
+.content {
+  width: 1060px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  /* Position relative pour permettre l'effet de soulignement des liens au hover */
+}
+
+@media screen and (min-width: 1540px) {
+  .large-content {
+    width: 1520px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 880px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .content {
+    width: 690px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    width: 520px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .content {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .content {
+    width: 260px;
+  }
+}
+
+
+/***************
+    COLONNES
+***************/
+
+.col {
+  /* Commun à toutes les colonnes */
+  float: left;
+  margin-right: 20px;
+  /* Gouttière */
+}
+
+.col-1-12 {
+  width: 70px;
+}
+
+.col-2-12 {
+  width: 160px;
+}
+
+.col-3-12 {
+  width: 250px;
+}
+
+.col-4-12 {
+  width: 340px;
+}
+
+.col-5-12 {
+  width: 430px;
+}
+
+.col-6-12 {
+  width: 520px;
+}
+
+.col-7-12 {
+  width: 610px;
+}
+
+.col-8-12 {
+  width: 700px;
+}
+
+.col-9-12 {
+  width: 790px;
+}
+
+.col-10-12 {
+  width: 880px;
+}
+
+.col-11-12 {
+  width: 970px;
+}
+
+.last {
+  margin-right: 0 !important;
+  /* Pour que la dernière colonne soit collée à gauche et ne passe pas à la ligne */
+}
+
+.clear {
+  clear: both;
+}
+
+@media screen and (max-width: 1200px) {
+  .col-1-12 {
+    width: 55px;
+  }
+  .col-2-12 {
+    width: 130px;
+  }
+  .col-3-12 {
+    width: 205px;
+  }
+  .col-4-12 {
+    width: 280px;
+  }
+  .col-5-12 {
+    width: 355px;
+  }
+  .col-6-12 {
+    width: 430px;
+  }
+  .col-7-12 {
+    width: 505px;
+  }
+  .col-8-12 {
+    width: 580px;
+  }
+  .col-9-12 {
+    width: 655px;
+  }
+  .col-10-12 {
+    width: 730px;
+  }
+  .col-11-12 {
+    width: 805px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .col {
+    /* Commun à toutes les colonnes */
+    margin-right: 15px;
+    /* Gouttière */
+  }
+  .md-col-0-12 {
+    height: 0;
+    width: 0;
+    /* Pour supprimer les colonnes devenues inutiles et génantes */
+  }
+  .md-col-1-12 {
+    width: 43.75px;
+  }
+  .md-col-2-12 {
+    width: 102.5px;
+  }
+  .md-col-3-12 {
+    width: 161.25px;
+  }
+  .md-col-4-12 {
+    width: 220px;
+  }
+  .md-col-5-12 {
+    width: 278.75px;
+  }
+  .md-col-6-12 {
+    width: 337.5px;
+  }
+  .md-col-7-12 {
+    width: 396.25px;
+  }
+  .md-col-8-12 {
+    width: 455px;
+  }
+  .md-col-9-12 {
+    width: 513.75px;
+  }
+  .md-col-10-12 {
+    width: 572.5px;
+  }
+  .md-col-11-12 {
+    width: 631.25px;
+  }
+  .md-col-12-12 {
+    width: 690px;
+    margin-right: 0;
+    /* Colonnes qui prennent désormais toute la largeur de contenu.
+       Elles ne doivent plus avoir de marge à droite pour pouvoir coller le bord */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .col {
+    margin-right: 14px;
+    /* 14px * 11 gouttières = 154px
+       520px - 154px = 366px
+       366px / 12 col = 30.5px par col */
+  }
+  .sm-col-0-12 {
+    width: 0;
+    height: 0;
+  }
+  .sm-col-1-12 {
+    width: 30.5px;
+  }
+  .sm-col-2-12 {
+    width: 75px;
+  }
+  .sm-col-3-12 {
+    width: 119.5px;
+  }
+  .sm-col-4-12 {
+    width: 164px;
+  }
+  .sm-col-5-12 {
+    width: 208.5px;
+  }
+  .sm-col-6-12 {
+    width: 253px;
+  }
+  .sm-col-7-12 {
+    width: 297.5px;
+  }
+  .sm-col-8-12 {
+    width: 342px;
+  }
+  .sm-col-9-12 {
+    width: 386.5px;
+  }
+  .sm-col-10-12 {
+    width: 431px;
+  }
+  .sm-col-11-12 {
+    width: 475.5px;
+  }
+  .sm-col-12-12,
+  .md-col-12-12 {
+    width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .xs-col-0-12 {
+    width: 0;
+    height: 0;
+  }
+  .xs-col-12-12,
+  .sm-col-12-12,
+  .md-col-12-12 {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .xs-col-12-12,
+  .sm-col-12-12,
+  .md-col-12-12 {
+    width: 260px;
+  }
+}
+
+
+/**********************
+    BOUTONS (commun)
+***********************/
+
+.btn {
+  width: 160px;
+  background-color: #CAAD93;
+  border: 1px solid #603D27;
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  /* Pour prendre en compte les margin et padding */
+  margin: auto;
+  /* Pour centrer les boutons */
+  padding: 0.6em 0;
+  position: relative;
+  /* Pour pouvoir positionner les différents boutons */
+}
+
+.white-border-btn {
+  border: 1px solid #fff;
+}
+
+.light-btn,
+.btn:hover {
+  color: #603D27;
+  border: 1px solid #603D27;
+  background-color: #F8F2EB;
+}
+
+.light-btn:hover {
+  background-color: #CAAD93;
+  color: #FFF;
+}
+
+@media screen and (max-width: 1200px) {
+  .btn {
+    width: 134px;
+    font-size: 15px;
+  }
+}
+
+
+/****************************
+   LIGNES AUTOUR DES TITRES
+*****************************/
+
+.line-right {
+  display: flex;
+  /* Définit la boîte en un élément flexible */
+  align-items: center;
+  /* Pour centrer la ligne verticalement */
+}
+
+.line-right::after {
+  /* ::before et ::after sont utilisés généralement pour ajouetr du contenu esthétique via la propriété content */
+  content: '';
+  flex: 1;
+  /* La propriété flex est une propriété raccourcie qui définit la capacité d'un élément flexible à modifier ses dimensions afin de remplir l'espace disponible de son conteneur.
+  Dans ce cas, flex-grow vaut 1 et prendra donc la dimension de l'espace restant */
+  margin: .75em 0 0 .65em;
+  border-bottom: 2px solid #9F7A5D;
+}
+
+.center-line {
+  display: flex;
+}
+
+.center-line::before,
+.center-line::after {
+  content: '';
+  flex: 1;
+  /* La ligne prendra tout l'espace disponible après l'élément .center-line */
+  border-bottom: 2px solid #9F7A5D;
+}
+
+.white-center-line::before,
+.white-center-line::after {
+  border-bottom: 2px solid #fff;
+}
+
+.dark-center-line::before,
+.dark-center-line::after {
+  border-bottom: 2px solid #603D27;
+}
+
+.center-line::before {
+  margin-right: .50em;
+  /* Espace entre le titre et la ligne avant */
+  position: relative;
+  top: -0.3em;
+  /* Pour que la ligne soit alignée avec la base su titre */
+}
+
+.center-line::after {
+  margin-left: .50em;
+  /* Espace entre le titre et la ligne après */
+  position: relative;
+  top: -0.3em;
+}
+
+@media screen and (max-width: 992px) {
+  .md-center-line {
+    display: flex;
+  }
+  .md-center-line::before,
+  .md-center-line::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid #9F7A5D;
+  }
+  .md-center-line::before {
+    margin-right: .50em;
+    position: relative;
+    top: 0.35em;
+  }
+  .md-center-line::after {
+    margin-left: .50em;
+  }
+}
+
+
+/********************
+       HEADER
+*********************/
+
+
+/* Commun */
+
+.logo {
+  width: 150px;
+  float: left;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 115px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .logo {
+    width: 110px;
+    margin-left: 10px;
+  }
+}
+
+
+/* Page d'accueil */
+
+.homepage-header {
+  background-color: rgba(132, 105, 95, 0);
+}
+
+.homepage-background,
+.homepage-intro-background,
+.black-layer {
+  height: 860px;
+  width: 100%;
+}
+
+
+.homepage-background {
+  position: relative;
+}
+
+.homepage-intro-background,
+.black-layer {
+  position: absolute;
+  /* Pour positionner les images et pouvoir utiliser le z-index */
+  top: 0;
+  left: 0;
+}
+
+.homepage-intro-background {
+  object-position: top center;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.black-layer {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Pour que l'image prenne toute la largeur quand on dézoome */
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.homepage-logo {
+  margin-top: 25px;
+}
+
+.separator {
+  height: 130px;
+  /* Espace entre la navigation et le texte d'introduction */
+}
+
+.vertical-line {
+  border-left: 5px solid #fff;
+  height: 250px;
+  margin-top: 24px;
+}
+
+.homepage-intro h1,
+.homepage-intro p {
+  color: #fff;
+  text-align: center;
+}
+
+.homepage-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  margin: 5px auto 15px;
+}
+
+strong {
+  font-weight: inherit;
+}
+
+.homepage-intro p {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.homepage-intro p.intro-text-uppercase,
+.homepage-intro span.intro-text-uppercase {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  word-spacing: 3px;
+}
+
+.web {
+  width: 50px;
+  display: block;
+  /* Sans le display block, les marges ne sont pas prises en compte car c'est un élément inline */
+  margin-left: auto;
+  margin-right: auto;
+  /* Les marges auto permettent de centrer l'image */
+  margin-top: 40px;
+}
+
+br.xs-break-text {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .homepage-intro,
+  .homepage-intro-background,
+  .black-layer {
+    height: 570px;
+  }
+  .homepage-logo {
+    margin-top: 20px;
+  }
+  .separator {
+    height: 45px;
+  }
+  .vertical-line {
+    height: 215px;
+  }
+  .homepage-intro h1 {
+    font-size: 34px;
+    margin: 7px auto 15px;
+  }
+  .homepage-intro p {
+    font-size: 22px;
+    margin-top: 18px;
+  }
+  .homepage-intro p.intro-text-uppercase,
+  .homepage-intro span.intro-text-uppercase {
+    font-size: 18px;
+  }
+  .web {
+    width: 45px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .homepage-intro,
+  .homepage-intro-background,
+  .black-layer {
+    height: 600px;
+  }
+  .separator {
+    height: 45px;
+  }
+  .vertical-line {
+    height: 188px;
+    position: relative;
+    left: 48.5px;
+  }
+  .homepage-intro h1 {
+    font-size: 30px;
+  }
+  .homepage-intro p {
+    font-size: 20px;
+  }
+  .homepage-intro p.intro-text-uppercase,
+  .homepage-intro span.intro-text-uppercase {
+    font-size: 16px;
+  }
+  .web {
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .separator {
+    height: 35px;
+  }
+  .vertical-line {
+    display: none;
+    /* Suppression de la ligne verticale */
+  }
+  .web {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .separator {
+    height: 20px;
+  }
+  .homepage-intro h1 {
+    font-size: 28px;
+  }
+  br.xs-break-text {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .homepage-intro h1 {
+    font-size: 26px;
+  }
+  .homepage-intro p {
+    font-size: 18px;
+  }
+  .homepage-intro p.intro-text-uppercase,
+  .homepage-intro span.intro-text-uppercase {
+    font-size: 14px;
+  }
+}
+
+
+/* Header autres pages */
+
+header {
+  height: 90px;
+  background-color: #84695F;
+}
+
+.pages-logo {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .pages-logo {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    height: 70px;
+  }
+  .pages-logo {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pages-logo {
+    margin-top: 12px;
+  }
+}
+
+
+/******************
+     NAVIGATION
+*******************/
+
+
+/* Général */
+
+header nav {
+  float: right;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  /*text-transform: uppercase;*/
+  color: #FFF;
+  margin: 0 30px 0 0;
+  line-height: 90px;
+  /* Centrer verticalement la navigation */
+  word-spacing: 1em;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  margin-left: 1.26em;
+}
+
+
+/* Page d'accueil */
+
+.homepage-header nav {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+  header nav {
+    font-size: 18px;
+    word-spacing: 0.75em;
+  }
+  .homepage-header nav {
+    margin-top: 10px;
+  }
+  header nav ul li a {
+    margin-left: 1em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  header nav {
+    font-size: 17px;
+    word-spacing: 0.65em;
+  }
+  .homepage-header nav {
+    margin-top: 5px;
+  }
+  header nav ul li a {
+    margin-left: 0.9em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepage-header nav ul.menu {
+    margin-top: 80px;
+  }
+  header:not(.homepage-header) nav ul.menu {
+    margin-top: 70px;
+    /* A l'exception de la page d'accueil, le menu déroulant commence à 70px du bord supérieur afin de démarrer juste sous le header */
+  }
+  header nav {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header nav {
+    margin-right: 10px;
+  }
+}
+
+
+/* Effet de soulignement des liens */
+
+header a:not(.current)::after {
+  /* L'animation ciblera les liens, sauf le lien actif */
+  content: "";
+  position: absolute;
+  /* Positionné par rapport à son parent, càd les liens */
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  /* Scale 0 --> la ligne sera à l'échelle 0 (et donc invisible au début de l'animation) */
+  transform-origin: 50% 50%;
+  /* Définit l'origine du repère pour les opérations de transformation d'un élément. La transformation débutera au centre */
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 1);
+  transition: transform 250ms;
+  /* Transition d'une durée de 250ms sur la propriété transform */
+}
+
+header a:not(.current):hover::after {
+  transform: scaleX(1);
+  /* Au hover, on passe à l'échelle 1, l'élément reprend sa dimension normale */
+}
+
+
+/* Lien actif */
+
+.current {
+  font-weight: 600;
+  border-bottom: 1px solid #fff;
+}
+
+.current:hover {
+  border-bottom: 2px solid #fff;
+}
+
+
+/***********************
+    NAVIGATION MOBILE
+************************/
+
+#hamburger-menu {
+  display: none;
+  /* Pour cacher la case à cocher */
+}
+
+@media (max-width: 768px) {
+  /*------------------------------------------------------------------
+       Création des 3 lignes qui forment l'icone du menu-hamburger
+  ------------------------------------------------------------------- */
+  .menu-button-container {
+    /* Dimension du container */
+    height: 90px;
+    width: 30px;
+    /* Ergonomie : que l'utilisateur comprenne qu'il peut cliquer sur l'icone */
+    cursor: pointer;
+    /* Container flex pour centrer le contenu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    /* Cible le menu hamburger + avant et après */
+    background-color: #fff;
+    position: absolute;
+    /* Pour permettre la création des lignes */
+    height: 4px;
+    width: 30px;
+    /* Dimensions des 3 lignes */
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    /* Ajoute un effet au niveau de la vitesse de l'animation : "A transition effect with variable speed from start to end" */
+    border-radius: 2px;
+  }
+  .menu-button::before {
+    content: "";
+    margin-top: -8px;
+    /* Déplacement de la ligne du dessus */
+  }
+  .menu-button::after {
+    content: "";
+    margin-top: 8px;
+    /* Déplacement de la ligne du dessous */
+  }
+  /*-------------------------------------------------
+        Animation sur l'icone du menu-hamburger
+  --------------------------------------------------*/
+  #hamburger-menu:checked+.menu-button-container .menu-button::before {
+    /* The adjacent sibling combinator (+) separates two selectors and matches the second element only if it immediately follows the first element, and both are children of the same parent element. */
+    /* Cible la ligne du dessus quand la case est cochée */
+    margin-top: 0;
+    transform: rotate(405deg);
+    /* Rotation de la ligne du dessus pour former la croix */
+  }
+  #hamburger-menu:checked+.menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+    /* Va rendre invisible la ligne du milieu */
+  }
+  #hamburger-menu:checked+.menu-button-container .menu-button::after {
+    /* Cible la ligne du dessous quand la case est cochée */
+    margin-top: 0;
+    transform: rotate(-405deg);
+    /* Rotation de la ligne du dessous pour former la croix */
+  }
+  /* ----------------------------
+         Menu déroulant
+  -------------------------------*/
+  .menu {
+    width: 100%;
+    /* Prendra toute la largeur disponible */
+    line-height: 25px;
+    margin-top: 90px;
+    /* Il commencera juste sous le header */
+    padding: 0;
+    /* Pour que le menu déroulant soit collé au bord gauche */
+    position: absolute;
+    /* Positionné par rapport à son premier parent positionné */
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .menu>li {
+    /* The child combinator (>) is placed between two CSS selectors. It matches only those elements matched by the second selector that are the direct children of elements matched by the first. */
+    display: flex;
+    justify-content: center;
+    background-color: #F8F2EB;
+    height: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    /* Le menu déroulant se referme avec un effet de transition */
+  }
+  #hamburger-menu:checked~.menu li {
+    /* Cible les éléments de la liste quand on clique pour ouvrir le menu déroulant */
+    border-bottom: 1.5px solid #D4CCC3;
+    border-top: 2px solid #FCFAF7;
+    /* L'association d'une bordure plus claire et d'une bordure plus foncée va créer un effet de relief */
+    height: 2.7em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    /* Le menu déroulant s'ouvre avec un effet de transition */
+  }
+  #hamburger-menu:checked~.menu li:first-child {
+    /* Cible le premier item de la liste dans le menu déroulant */
+    border-top: 1.6px solid #D4CCC3;
+    padding-top: 0.55em;
+  }
+  /* -------------------
+           Liens
+  ----------------------*/
+  #hamburger-menu~.menu a {
+    display: none;
+    /* Pour cacher les liens quand le menu halburger est fermé */
+  }
+  #hamburger-menu:checked~.menu a {
+    display: flex;
+    color: #71482E;
+  }
+  /*-------------------------------
+      Soulignement des liens
+  --------------------------------*/
+  #hamburger-menu:checked~.menu a:not(.current)::after {
+    background-color: #71482E;
+    /* Pour que le soulignement des liens dans le menu soit brun et non plus blanc quand c'est le menu hamburger */
+  }
+  /*------------------
+       Lien actif
+  -------------------*/
+  #hamburger-menu:checked~.menu a.current {
+    border-bottom: 1px solid #71482E;
+  }
+  #hamburger-menu:checked~.menu a.current:hover {
+    border-bottom: 2px solid #71482E;
+  }
+}
+
+@media (max-width: 576px) {
+  header:not(.homepage-header) .menu-button-container {
+    height: 70px;
+    /* Hauteur du header */
+  }
+  header:not(.homepage-header) nav ul.menu {
+    margin-top: 70px;
+    /* Juste sous le header */
+  }
+}
+
+
+/***********************
+   SECTIONS - GENERAL
+***********************/
+
+.pages-introduction h1,
+.about-page h1,
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #9F7A5D;
+}
+
+section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #333333;
+}
+
+@media screen and (max-width: 1200px) {
+  .pages-introduction h1,
+  .about-page h1,
+  section h2 {
+    font-size: 28px;
+  }
+  section p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .pages-introduction h1,
+  .about-page h1,
+  section h2 {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pages-introduction h1,
+  .about-page h1,
+  section h2 {
+    font-size: 24px;
+  }
+  section p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .pages-introduction h1,
+  .about-page h1,
+  section h2 {
+    font-size: 22px;
+  }
+  section p {
+    font-size: 14px;
+  }
+}
+
+
+/****************************
+    SECTION D'INTRODUCTION
+*****************************/
+
+
+/* Général */
+
+.pages-introduction {
+  text-align: center;
+}
+
+.pages-introduction h1 {
+  margin: 40px auto 20px;
+}
+
+.pages-introduction p {
+  margin: 20px auto 55px;
+}
+
+
+/* Page services */
+
+.services-page-intro-text {
+  width: 470px;
+  /* Comme le titre ici est plus large, si je ne définis pas une largeur plus petite pour le texte, la leture est malaisée */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .services-page-intro-text {
+    width: 420px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .services-page-intro-text {
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .services-page-intro-text {
+    width: 260px;
+  }
+}
+
+
+/************************
+   ACCUEIL - SECTION 1
+*************************/
+
+.homepage-about {
+  background-color: #F8F2EB;
+  position: relative;
+  /* Pour servir de base au contenu */
+}
+
+
+/* Partie gauche */
+
+.homepage-about h2 {
+  margin-top: 158px;
+}
+
+.more-about-me-btn {
+  top: 36px;
+  float: left;
+  margin-bottom: 196px;
+}
+
+
+/* Partie droite */
+
+.wood {
+  float: right;
+  width: 340px;
+  position: relative;
+  top: 64px;
+  z-index: 0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.avatar {
+  width: 430px;
+  float: left;
+  position: absolute;
+  /* Absolute pour ne pas décaler la section suivante en consommant du flux (l'espace que l'avatar aurait occupé est retiré) */
+  top: 145px;
+  z-index: 1;
+}
+
+p.hello {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #fff;
+  position: relative;
+  top: 100px;
+  left: 343px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1200px) {
+  .homepage-about h2 {
+    margin-top: 105px;
+  }
+  .more-about-me-btn {
+    top: 26px;
+    margin-bottom: 140px;
+  }
+  .wood {
+    width: 287px;
+    top: 42px;
+  }
+  .avatar {
+    width: 363px;
+    top: 110px;
+  }
+  p.hello {
+    font-size: 40px;
+    top: 70px;
+    left: 285px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .homepage-about h2 {
+    margin-top: 50px;
+  }
+  .more-about-me-btn {
+    top: 22px;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 160px;
+  }
+  .avatar-complete {
+    width: 455px;
+    position: relative;
+    top: -454px;
+    margin: 0 auto;
+  }
+  .homepage-about-text {
+    width: 363px;
+    position: relative;
+    top: 430px;
+    text-align: center;
+    margin: auto;
+  }
+  .wood {
+    top: 82px;
+  }
+  p.hello {
+    top: 110px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homepage-about h2 {
+    margin-top: 40px;
+  }
+  .more-about-me-btn {
+    margin-bottom: 150px;
+  }
+  .avatar-complete {
+    top: -444px;
+    width: 431px;
+    /* Largeur de sm-col-10-12*/
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .homepage-about h2 {
+    margin-top: 32px;
+  }
+  .avatar-complete {
+    width: 300px;
+    /* Largeur de content */
+    top: -355px;
+  }
+  .wood {
+    top: 0;
+    width: 205px;
+  }
+  .avatar {
+    top: 35px;
+    width: 239px;
+  }
+  p.hello {
+    font-size: 31px;
+    top: 30px;
+    left: 185px;
+  }
+  .homepage-about-text {
+    top: 310px;
+    width: 290px;
+  }
+  .more-about-me-btn {
+    margin-bottom: 123px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .homepage-about h2 {
+    margin-top: 28px;
+  }
+  .avatar-complete {
+    width: 250px;
+    top: -350px;
+  }
+  .wood {
+    top: 5px;
+    width: 175px;
+  }
+  .avatar {
+    width: 205px;
+  }
+  p.hello {
+    font-size: 24px;
+    left: 160px;
+  }
+  .homepage-about-text {
+    top: 250px;
+    width: 240px;
+  }
+  .more-about-me-btn {
+    top: 16px;
+    margin-bottom: 90px;
+  }
+}
+
+
+/***********************
+   ACCUEIL - SECTION 2
+************************/
+
+.homepage-works {
+  background-color: #CAAD93;
+  position: relative;
+}
+
+
+/* Partie de gauche */
+
+.relax {
+  width: 297.7px;
+  border-radius: 7px;
+  border: 10px solid #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  transform: rotate(-5deg);
+  position: relative;
+  top: 80px;
+  left: 20px;
+  z-index: 1;
+}
+
+
+/* Partie de droite */
+
+.homepage-works h2 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  position: relative;
+  top: 77px;
+}
+
+.unequal-horizontal-background {
+  height: 252px;
+  background-color: #F8F2EB;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  /*position: relative;
+  margin-left: 28vw;*/
+  top: 199px;
+  z-index: 0;
+  position: absolute;
+  max-width: 70vw;
+  width: 70vw;
+  right: 0;
+}
+
+.homepage-works p {
+  position: relative;
+  top: 150px;
+  z-index: 2;
+  text-align: center;
+}
+
+.btn-to-works {
+  top: 233px;
+  margin-bottom: 327.3px;
+}
+
+@media screen and (min-width: 1600px) {
+  .unequal-horizontal-background {
+    max-width: 68vw;
+    width: 68vw;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .unequal-horizontal-background {
+    max-width: 64vw;
+    width: 64vw;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .unequal-horizontal-background {
+    max-width: 63vw;
+    width: 63vw;
+  }
+}
+
+@media screen and (min-width: 2600px) {
+  .unequal-horizontal-background {
+    max-width: 60vw;
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 3500px) {
+  .unequal-horizontal-background {
+    max-width: 58vw;
+    width: 58vw;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .relax {
+    width: 253.16px;
+    left: 18px;
+    top: 42.5px;
+    border: 7px solid #fff;
+  }
+  .unequal-horizontal-background {
+    height: 212px;
+    top: 144px;
+  }
+  .homepage-works h2 {
+    top: 47px;
+  }
+  .homepage-works p {
+    top: 97px;
+    letter-spacing: -0.2px;
+  }
+  .btn-to-works {
+    top: 160px;
+    margin-bottom: 220px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .relax,
+  .homepage-works p,
+  .unequal-horizontal-background {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .relax {
+    display: block;
+    /* Pour que les marges soient prises en compte et que l'image soit centrée */
+    top: 135px;
+    left: 0;
+  }
+  .unequal-horizontal-background {
+    max-width: 100vw;
+    width: 100vw;
+    height: 300px;
+    top: 480px;
+  }
+  .homepage-works h2 {
+    top: -385px;
+  }
+  .homepage-works p {
+    width: 430px;
+    top: 100px;
+  }
+  .btn-to-works {
+    top: 173px;
+    margin-bottom: 254px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homepage-works h2 {
+    top: -390px;
+  }
+  .relax {
+    top: 120px;
+  }
+  .unequal-horizontal-background {
+    height: 300px;
+    top: 460px;
+  }
+  .homepage-works p {
+    top: 90px;
+  }
+  .btn-to-works {
+    top: 163px;
+    margin-bottom: 234px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .relax {
+    width: 200px;
+    top: 100px;
+    border: 5px solid #fff;
+  }
+  .homepage-works h2 {
+    top: -315px;
+  }
+  .homepage-works p {
+    width: 290px;
+    top: 65px;
+  }
+  .unequal-horizontal-background {
+    height: 310px;
+    top: 360px;
+  }
+  .btn-to-works {
+    top: 140px;
+    margin-bottom: 212px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .relax {
+    top: 90px;
+  }
+  .homepage-works h2 {
+    width: 260px;
+  }
+  .homepage-works p {
+    width: 260px;
+    top: 60px;
+  }
+  .unequal-horizontal-background {
+    height: 310px;
+    top: 340px;
+  }
+  .btn-to-works {
+    top: 115px;
+    margin-bottom: 173px;
+  }
+}
+
+
+/************************
+    ABOUT - SECTION 1
+*************************/
+
+
+/* Partie gauche */
+
+.my-picture-container {
+  position: relative;
+  /* Pour que la photo soit positionnée par rapport au fond effet bois */
+}
+
+.wood-frame {
+  width: 350px;
+  position: relative;
+  top: 100px;
+}
+
+.my-picture {
+  width: 350px;
+  border-radius: 7px;
+  border: 10px solid #CAAD93;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+
+
+/* Partie droite */
+
+.about-page-text-container {
+  position: relative;
+  top: 70px;
+}
+
+.about-page p {
+  font-size: 16px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.cv-btn {
+  width: 207px;
+  margin: 46px auto 164px;
+  /* Margin-bottom pour augmenter l'espace entre cette section et la suivante */
+}
+
+@media screen and (max-width: 1200px) {
+  .wood-frame {
+    width: 298.2px;
+  }
+  .my-picture {
+    /* width: 276.05px;*/
+    width: 290px;
+    top: 140px;
+    left: 40px;
+    border: 7px solid #CAAD93;
+  }
+  .about-page-text-container {
+    top: 55px;
+  }
+  .about-page p {
+    font-size: 15px;
+    margin: 15px auto;
+    letter-spacing: -0.2px;
+  }
+  .cv-btn {
+    width: 174px;
+    margin: 30px auto 145px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .about-page h1 {
+    position: relative;
+    top: -416px;
+  }
+  .my-picture-container {
+    top: 25px;
+    width: 330px;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-page-text {
+    position: relative;
+    top: 66.5px;
+  }
+  .about-page p {
+    width: 400px;
+    margin: 20px auto;
+  }
+  .cv-btn {
+    margin: 35px auto 183.2px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-page h1 {
+    top: -416px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Titre */
+  .about-page h1 {
+    top: -330px;
+    text-align: center;
+  }
+  .about-page .center-line::before,
+  .about-page .center-line::after {
+    top: -1.59em;
+  }
+  /* Photo */
+  .my-picture-container {
+    width: 260px;
+    top: 30px;
+  }
+  .wood-frame {
+    width: 230px;
+  }
+  .my-picture {
+    width: 228px;
+    top: 125px;
+    left: 30px;
+    border: 5px solid #CAAD93;
+  }
+  /* Texte */
+  .about-page p {
+    width: 265px;
+    font-size: 14px;
+  }
+  .about-page-text {
+    top: 25px;
+    left: 0;
+  }
+  /* Bouton */
+  .cv-btn {
+    margin: 35px auto 135px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .about-page {
+    min-height: 1060px;
+  }
+  .about-page h1 {
+    top: -320px;
+  }
+  /* Photo */
+  .my-picture-container {
+    width: 240px;
+    top: 5px;
+  }
+  .wood-frame {
+    width: 210px;
+  }
+  .my-picture {
+    width: 208px;
+  }
+  /* Texte */
+  .about-page p {
+    width: 250px;
+  }
+  .about-page-text {
+    top: 10px;
+  }
+  /* Bouton */
+  .cv-btn {
+    margin: 35px auto 115px;
+  }
+}
+
+
+/*******************************
+    TRAVAUX - SECTIONS 2 et 3
+********************************/
+
+.projects-gallery {
+  text-align: center;
+}
+
+.tan-theme {
+  background-color: #CAAD93;
+}
+
+.light-theme {
+  background-color: #F8F2EB;
+}
+
+.project-container {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.projects-gallery h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 33px;
+}
+
+.light-theme h2 {
+  color: #603D27;
+}
+
+.projects-gallery img {
+  width: 250px;
+  height: 415px;
+  border: 5px solid #603D27;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+}
+
+.projects-gallery .btn {
+  margin-bottom: 20px;
+}
+
+.m-b-mid {
+  margin-bottom: 42px;
+}
+
+@media screen and (max-width: 1200px) {
+  .projects-gallery h2 {
+    margin-top: 50px;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+  .projects-gallery .btn {
+    margin-bottom: 25px;
+  }
+
+}
+
+@media screen and (max-width: 330px) {
+  .projects-gallery h2 {
+    margin-top: 30px;
+  }
+  .projects-gallery img {
+    width: 210px;
+    height: 348.6px;
+    border: 3px solid #603D27;
+  }
+}
+
+
+/****************************
+    TRAVAUX - ANIMATIONS
+*****************************/
+
+.overlay-container {
+  position: relative;
+  /* Pour servir de base */
+  margin: 10px auto 36px;
+}
+
+.fade {
+  position: absolute;
+  /* En absolute à 0, l'animation se placera au même endroit que le container */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 99%;
+  /* Le contenu fait la même dimension que le container. Moins 1% pour la hauteur pour compenser le border-shadow sur l'image */
+  border-radius: 10px;
+  opacity: 0;
+  /* Pour être invisible */
+  transition: .5s ease;
+  /* Animation : détermine la durée et le type de transition ("ease" détermine un effet de transition avec un départ lent, puis plus rapide, puis qui se termine doucement */
+  background-color: rgba(77, 48, 30, 0.9);
+}
+
+.overlay-container:hover .fade {
+  opacity: 1;
+  /* Pour apparaitre au hover */
+  display: flex;
+}
+
+section .overlaid-text p {
+  display: flex;
+  align-items: center;
+  width: 204px;
+  height: 363px;
+  border: 1px solid #fff;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  /* Sera positionné par rapport au container qui est en position relative */
+  top: 46%;
+  left: 50%;
+  /* Pour centrer le texte*/
+  transform: translate(-50%, -50%);
+  /* Déplacement de 50% sur l'axe vertical et sur l'axe horizontal*/
+}
+
+.space-between-p {
+  display: block;
+  margin-top: 20px;
+  /* Espace entre les paragraphes */
+}
+
+@media screen and (max-width: 330px) {
+  .fade {
+    left: 20px;
+    width: 210px;
+    height: 348.6px;
+  }
+  section .overlaid-text p {
+    width: 172.2px;
+    height: 314.29px;
+    padding: 8px;
+    font-size: 14px;
+  }
+  .space-between-p {
+    margin-top: 15px;
+  }
+}
+
+
+/*******************************
+   SERVICES - SECTIONS 2 et 3
+********************************/
+
+.services-provided {
+  text-align: center;
+}
+
+.skills-section-1 {
+  background-color: #F8F2EB;
+}
+
+.skills-section-2 {
+  background-color: #E2DCD6;
+}
+
+.services-provided h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #333333;
+  padding-top: 70px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.services-provided strong {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-transform: initial;
+  color: #9F7A5D;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.services-provided h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #603D27;
+  margin-bottom: 20px;
+}
+
+.services-provided img {
+  width: 340px;
+  border: 1px solid #603D27;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.m-b-big {
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .services-provided h2,
+  .services-provided strong,
+  .services-provided h3 {
+    font-size: 22px;
+  }
+  .services-provided img {
+    width: 280px;
+    /* Largeur de col-4-12 */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .services-provided strong,
+  .services-provided img {
+    margin-bottom: 30px;
+  }
+  .service-container,
+  .services-provided img {
+    width: 287px;
+  }
+  .service-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .m-b-big {
+    margin-bottom: 60px;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .services-center-line::before,
+  .services-center-line::after {
+    top: -1.62em;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .services-provided h2 {
+    padding-top: 30px;
+  }
+  .services-provided strong {
+    margin-bottom: 0;
+  }
+  .services-provided h3 {
+    margin-top: 40px;
+  }
+  .services-provided h2,
+  .services-provided strong,
+  .services-provided h3 {
+    font-size: 18px;
+  }
+  .service-container,
+  .services-provided img {
+    width: 250px;
+    margin: auto;
+  }
+}
+
+
+/***************************
+    SERVICES - ANIMATIONS
+****************************/
+
+
+/* Slide in Overlay from the Left */
+
+.slide-container {
+  position: relative;
+  width: 100%;
+}
+
+.slided-over-image {
+  display: block;
+}
+
+.slide {
+  background-color: #fff;
+  border-radius: 9px;
+  overflow: hidden;
+  /* Pour que ce qui dépasse soit invisible */
+}
+
+.slide-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* Le slide sera sur le container */
+  width: 0;
+  /* Et écrasé à gauche avant de s'ouvrir */
+  height: 100%;
+  transition: .5s ease;
+}
+
+.slide-container:hover .slide-left {
+  width: 100%;
+  /* Au hover, le slide reprend sa taile initiale en partant de la gauche (puisque le flux normal va de gauche à droite) */
+}
+
+.slide-text {
+  display: flex;
+  align-items: center;
+  /* Texte centré verticalement */
+  font-family: 'Poppins', sans-serif;
+  width: 305px;
+  height: 214.93px;
+  border: 1px solid #603D27;
+  padding: 10px;
+  color: #603D27;
+  font-size: 18px;
+  position: absolute;
+  overflow: hidden;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1200px) {
+  .slide-text {
+    width: 250px;
+    height: 176px;
+    font-size: 16px;
+    top: 42%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .slide-text {
+    top: 42.5%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .slide-container {
+    width: 250px;
+    margin: auto;
+  }
+  .slide-text {
+    width: 230px;
+    height: 165px;
+    font-size: 15px;
+    top: 42%;
+  }
+}
+
+
+/* Slide in Overlay from the Top */
+
+.slide-top {
+  position: absolute;
+  bottom: 100%;
+  /* L'animation débutera avec un espace en-dessous de 100%, ce qui correspond à la dimension du container (donc comme si elle était placée au-dessus du container */
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.slide-container:hover .slide-top {
+  bottom: 0;
+  /* Au hover, le slide reprend sa place initiale devant le container */
+  height: 100%;
+  /* Et il reprend sa taille initiale */
+}
+
+
+/* Slide in Overlay from the Right */
+
+.slide-right {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  /* L'animation débutera avec un espace à gauche de la même dimension que le container. Donc s'il était visible, le slide serait placé tout contre le container à sa droite */
+  right: 0;
+  width: 0;
+  /* Sa largeur sera de 0, il sera complètement écrasé sur la droite */
+  height: 100%;
+  transition: .5s ease;
+}
+
+.slide-container:hover .slide-right {
+  width: 100%;
+  /* Au hover, le slide reprend sa taille et sa position de base */
+  left: 0;
+}
+
+
+/* Slide in Overlay from the Bottom */
+
+.slide-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Le contenu est positionné sur le container mais collé sur le bas */
+  /* Si on avait mis un top 0, l'animation aurait débuté du haut et non du bas */
+  width: 100%;
+  height: 0;
+  /* Avec une hauteur à zéro, le contenu est complètement écrasé sur le bas */
+  transition: .5s ease;
+}
+
+.slide-container:hover .slide-bottom {
+  height: 100%;
+  /* Et il reprend sa taille initiale au hover */
+}
+
+
+/***************************
+    CONTACT - SECTION 2
+****************************/
+
+
+/* Coordonnées */
+
+.contact-me {
+  background-color: #CAAD93;
+  text-align: center;
+}
+
+.contact-me h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+.contact-me p {
+  color: #603D27;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.contact-me img {
+  width: 55px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.contact-details,
+.map {
+  width: 250px;
+  height: 420px;
+}
+
+.contact-details,
+.map,
+form {
+  border: 2px solid #603D27;
+  border-radius: 10px;
+  background-color: #F8F2EB;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.contact-details {
+  padding: 25px 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-me h2 {
+    font-size: 22px;
+    margin-top: 70px;
+  }
+  .contact-me p {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  .contact-me img {
+    width: 46px;
+  }
+  .contact-details,
+  .map {
+    width: 205px;
+    /* Largeur de col-3-12 */
+    height: 355px;
+  }
+  .contact-details {
+    padding: 15px 4.5px 10px 5.5px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contact-details-map-container {
+    width: 455px;
+    /* Largeur d'une col de 8-12 */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-me h2 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .contact-details,
+  .map {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-details-map-container {
+    width: 431px;
+    /* Largeur de sm-col-10-12 */
+  }
+  .contact-details,
+  .map {
+    width: 208.5px;
+    /* Largeur de sm-col-5-12 */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-details-map-container {
+    width: 300px;
+    /* Largeur de content */
+    margin-top: 40px;
+  }
+  .contact-details,
+  .map {
+    width: 270px;
+    /* Largeur du formulaire */
+  }
+  .contact-me .sm-col-5-12 {
+    width: 270px;
+    display: block;
+    /* Pour que ces 2 colonnes passent l'une au-dessus de l'autre */
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .contact-details {
+    margin-bottom: 30px;
+  }
+  .contact-me .last {
+    margin-right: auto !important;
+    /* Pour contrer le margin right 0 */
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .contact-me h2 {
+    font-size: 20px;
+  }
+  .contact-me h2,
+  .contact-details-map-container {
+    width: 260px;
+    /* Largeur de content */
+  }
+  .contact-details,
+  .map,
+  .contact-me .sm-col-5-12 {
+    width: 208.5px;
+    /* Largeur du formulaire */
+  }
+}
+
+
+/* Formulaire */
+
+.form-container {
+  margin-bottom: 115px;
+}
+
+form {
+  width: 430px;
+  min-height: 420px;
+}
+
+.form-content {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  width: 362px;
+  min-height: 380px;
+  margin: 25px auto 12.5px;
+}
+
+.spacing {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  font-family: 'Poppins', sans-serif;
+  color: #603D27;
+}
+
+label[for=message] {
+  display: flex;
+  justify-content: start;
+  position: relative;
+  top: 10px;
+}
+
+input[type=text],
+input[type=email]
+{
+  width: 270px;
+}
+
+textarea {
+  width: 362px;
+  height: 180px;
+  resize: none;
+  /* Pour éviter que l'utilisateur puisse modifier la dimension de la zone de texte, ce qui casse toute la mise en page du formulaire */
+}
+
+input[type=submit] {
+  color: #fff;
+  background-color: #CAAD93;
+  border: 1px solid #603D27;
+  border-radius: 3px;
+  padding: 5px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* Au niveau ergonomique, la main donne une indication à l'utilisateur : il sait qu'il peut cliquer à cet endroit */
+}
+
+input[type=submit]:hover {
+  color: #603D27;
+  background-color: #F8F2EB;
+}
+
+.is-invalid {
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.form-errors {
+  color : red;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  margin: 5px 0 15px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1200px) {
+  .form-container {
+    margin-bottom: 93px;
+  }
+  form {
+    width: 355px;
+    /* Largeur de col-5-12 */
+    min-height: 355px;
+  }
+  .form-content {
+    width: 325px;
+    min-height: 325px;
+    margin: 15px auto 12.5px;
+  }
+  input[type=text],
+  input[type=email] {
+    width: 240px;
+    height: 21px;
+  }
+  textarea {
+    width: 325px;
+    height: 145px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .form-container,
+  form {
+    width: 455px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form-container {
+    margin-top: 50px;
+    margin-bottom: 70px;
+  }
+  form {
+    min-height: 400px;
+  }
+  .form-content {
+    width: 410px;
+    min-height: 370px;
+    margin: 15px auto 12.5px;
+  }
+  input[type=text],
+  input[type=email] {
+    width: 320px;
+    height: 23px;
+  }
+  textarea {
+    width: 410px;
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-container,
+  form {
+    width: 431px;
+    /* Largeur de sm-col-10-12 */
+  }
+  .form-content {
+    width: 390px;
+  }
+  input[type=text],
+  input[type=email] {
+    width: 300px;
+  }
+  textarea {
+    width: 390px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .form-container {
+    width: 300px;
+    /* Largeur de content */
+    margin-top: 30px;
+  }
+  form {
+    width: 270px;
+    margin-bottom: 40px;
+  }
+  .form-content {
+    width: 240px;
+    margin: 12.5px auto;
+  }
+  input[type=text],
+  input[type=email] {
+    width: 185px;
+  }
+  input[name=firstname] {
+    width: 160px;
+  }
+  textarea {
+    width: 240px;
+  }
+  label {
+    font-size: 15px;
+  }
+  .form-errors{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .form-container {
+    width: 260px;
+  }
+  form {
+    width: 210px;
+  }
+  .form-content {
+    width: 185px;
+    margin: 12.5px auto;
+  }
+  input[type=text],
+  input[type=email] {
+    width: 135px;
+    height: 20px;
+  }
+  input[name=firstname] {
+    width: 110px;
+  }
+  textarea {
+    width: 184px;
+    height: 180px;
+  }
+}
+
+
+/***************************
+   LEAD TO (THE NEXT PAGE)
+****************************/
+
+.lead-to {
+  height: 200px;
+  background-color: #F8F2EB;
+}
+
+.white-theme {
+  background-color: #fff;
+}
+
+.lead-to-container {
+  display: flex;
+  justify-content: center;
+}
+
+.lead-to-content {
+  display: flex;
+}
+
+.lead-to h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  font-weight: 400;
+  color: #84695F;
+  line-height: 200px;
+  margin: 0 50px 0 0;
+}
+
+.white-theme h2,
+.white-theme .text-in-laptop {
+  color: #603D27;
+}
+
+.laptop-container {
+  position: relative;
+  /* Pour servir de base au texte */
+}
+
+.laptop {
+  width: 160px;
+  margin-top: 52px;
+}
+
+.text-in-laptop {
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #84695F;
+  top: 65px;
+  left: 35px;
+}
+
+.text-in-laptop-services {
+  left: 33px;
+}
+
+.text-in-laptop-contact {
+  left: 39.2px;
+}
+
+@media screen and (max-width: 1200px) {
+  .lead-to {
+    height: 192px;
+  }
+  .lead-to h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    line-height: 192px;
+  }
+  .laptop-container {
+    top: 47px;
+  }
+  .laptop {
+    width: 133px;
+    margin-top: 10px;
+  }
+  .text-in-laptop {
+    top: 19.5px;
+    left: 27px;
+  }
+  .text-in-laptop-services {
+    left: 25px;
+  }
+  .text-in-laptop-contact {
+    left: 30px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .lead-to,
+  .lead-to-container {
+    height: 250px;
+  }
+  .lead-to h2 {
+    line-height: 50px;
+    margin: 0 auto;
+  }
+  .lead-to-container {
+    display: flex;
+    flex-direction: column;
+    /* Contenu centré horizontalement car en colonnes et justify-content à center est toujours actif */
+  }
+  .lead-to-content {
+    justify-content: center;
+    /* Centrer horizontalement */
+  }
+  .laptop-container {
+    top: 0;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .lead-to h2 {
+    font-size: 36px;
+    text-align: center;
+    line-height: 45px;
+  }
+  .laptop-container {
+    margin-top: 5px;
+  }
+  .text-in-laptop {
+    left: 29px;
+  }
+  .text-in-laptop-services {
+    left: 27.5px;
+  }
+  .text-in-laptop-contact {
+    left: 32px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .text-in-laptop {
+    top: 22.5px;
+    left: 31px;
+  }
+  .text-in-laptop-services {
+    left: 29.8px;
+  }
+  .text-in-laptop-contact {
+    left: 34px;
+  }
+}
+
+
+/***************
+       UP
+***************/
+
+/* Page d'accueil */
+
+.home-up {
+  height: 200px;
+
+}
+
+.home-up-container {
+  display: flex;
+  justify-content: center;
+}
+
+.home-up-content {
+  display: flex;
+}
+
+.home-up h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 200px;
+  color: #603D27;
+  margin: 0 50px 0 0;
+  float: left;
+}
+
+.home-up-icon {
+  width: 35px;
+  position: relative;
+  top: 85px;
+  float: right;
+}
+
+.xxs-break-text {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .home-up {
+    height: 182px;
+  }
+  .home-up h3 {
+    font-size: 40px;
+    line-height: 182px;
+  }
+  .home-up-icon {
+    top: 75px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-up-container {
+    height: 182px;
+    /* Hauteur de la section home-up */
+    display: flex;
+    flex-direction: column;
+    /* Contenu centré horizontalement car en colonnes et justify-content à center est toujours actif */
+  }
+  .home-up h3 {
+    line-height: 50px;
+    margin: 0 auto;
+  }
+  .home-up-content {
+    justify-content: center;
+    /* Centrer horizontalement */
+  }
+  .home-up-icon {
+    top: 0;
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home-up h3 {
+    font-size: 34px;
+  }
+  .home-up-icon {
+    width: 30px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .home-up h3 {
+    font-size: 32px;
+    line-height: 35px;
+    text-align: center;
+  }
+  .xxs-break-text {
+    display: inline;
+  }
+  .home-up-icon {
+    width: 25px;
+  }
+}
+
+
+/* Autres pages */
+
+.up {
+  height: 100px;
+  background-color: #F8F2EB;
+  text-align: center;
+}
+
+.up h3 {
+  display: none;
+  /* Le titre a un but sémantique (pour le référencement) mais n'est pas destiné à être visible */
+}
+
+.up-icon {
+  width: 35px;
+  position: relative;
+  top: 37.5px;
+}
+
+.white-theme {
+  background-color: #fff;
+}
+
+
+/***************
+     FOOTER
+***************/
+
+footer {
+  height: 80px;
+  background-color: #84695F;
+}
+
+footer p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  line-height: 80px;
+  margin: 0;
+}
+
+footer a:hover {
+  color: #ECE3D9FF;
+  text-decoration: underline;
+}
+
+@media screen and (max-width:768px) {
+  footer p {
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  footer p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:330px) {
+  footer p {
+    font-size: 12px;
+  }
+}

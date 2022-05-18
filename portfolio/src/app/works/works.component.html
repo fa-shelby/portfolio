@@ -1,0 +1,133 @@
+
+<!--================= SECTION 1 - INTRO =================-->
+
+<section class="pages-introduction">
+
+  <!-- Ouverture de la balise délimitant la largeur du contenu -->
+  <div class="content">
+
+    <div class="col col-3-12 md-col-2-12 sm-col-1-12 xs-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Petit texte d'introduction -->
+    <div class="col col-6-12 md-col-8-12 sm-col-10-12 xs-col-12-12">
+      <div class="works-page-intro-text">
+        <h1 class="center-line">Mes réalisations</h1>
+        <p>Dans cette section, vous trouverez un aperçu des travaux réalisés dans le cadre de ma formation en développement web.</p>
+      </div>
+    </div>
+
+    <div class="col col-3-12 last md-col-2-12 sm-col-1-12 xs-col-0-12">
+      <p></p>
+    </div>
+
+    <!-- Supression du float -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+
+
+<!--================= SECTION 2 - GALLERIE 1 =================-->
+
+<!-- Section 2 : présentation des 3 premiers projets -->
+
+<section class="projects-gallery tan-theme">
+  <div *ngFor="let work of works; let i = index">
+    <!-- Balise délimitant le contenu -->
+    <div class="content">
+      <!-- PROJET -->
+      <div class="col col-4-12 md-col-12-12" [ngClass]="{'last': i %3 === 2}">
+        <!-- Container pour limiter les lignes autour du titre -->
+        <div class="project-container">
+          <!-- Titre entouré de demi-lignes blanches -->
+          <h2 class="center-line white-center-line">{{ work.works_title }}</h2>
+          <!-- Container pour l'overlay -->
+          <div class="overlay-container">
+            <!-- Image du projet 1 -->
+            <img class="overlay-image" *ngIf="work.works_img" [appServerImg]=" work.works_img " alt="Image de la page web réalisée">
+            <!-- Animatiton : apparition du texte au hover sur l'image -->
+            <div class="fade">
+              <div class="overlaid-text">
+                <p>{{ work.works_description_part1 }}
+                  <br class="space-between-p"><br>{{ work.works_description_part2 }}
+                </p>
+              </div>
+            </div>
+
+            <!-- Fermeture de la balise container pour l'overlay -->
+          </div>
+
+          <!-- Bouton sous l'image pour ouvrir le pdf -->
+          <div><a class="btn white-border-btn" *ngIf="work.works_link" [appServerLink]=" work.works_link " target="blank">Agrandir<br>l'image</a>
+          </div>
+
+          <!-- Fin du container pour le projet -->
+        </div>
+
+        <!-- Fin de la colonne de 4-12 -->
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Suppresssion du flottement -->
+  <div class="clear"></div>
+  <div class="m-b-mid"></div>
+
+</section>
+
+
+<!--================= SECTION 3 =================-->
+
+<!-- Section permettant de guider l'utilisateur vers la page suivante (services) -->
+<section class="lead-to white-theme">
+
+  <!-- Ouverture de la balise content -->
+  <div class="content lead-to-container">
+
+    <!-- Lien vers la page "Services" -->
+
+    <div class="lead-to-content">
+
+      <a [routerLink]="['/','page','services']">
+        <h2>Ce que je peux faire <br class="xs-break-text">pour vous : </h2>
+      </a>
+
+    </div>
+
+    <div class="laptop-container lead-to-content">
+
+      <a [routerLink]="['/','page','services']">
+        <img class="laptop" src="assets/images/laptop-200.png" srcset="assets/images/laptop-200.png 200w,
+                    assets/images/laptop-600.png 600w" sizes="(max-width : 992px) 200px, 600px" alt="Image d'un laptop">
+        <p class="text-in-laptop">services</p>
+      </a>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>
+
+
+<!--================= SECTION 5 - UP =================-->
+
+<!-- Section permettant de revenir facilement en haut de la page -->
+<section class="up">
+
+  <h3>Revenir en haut de la page</h3>
+
+  <div class="content">
+    <!-- Ancre vers la barre de navigation -->
+    <a href="/page/works#"><img class="up-icon" src="assets/images/up.png" alt="Flèche vers le haut"></a>
+  </div>
+
+</section>
+

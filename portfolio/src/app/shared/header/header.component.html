@@ -1,0 +1,35 @@
+<header>
+
+  <!-- Logo et menu : en full-width puis dans une largeur de contenu plus large sur les écrans très grands -->
+  <div class="large-content">
+
+    <!-- LOGO -->
+
+    <a routerLink="/"><img class="logo pages-logo" src="assets/images/logo.svg" alt="Logo - Fabienne BENOIT"></a>
+
+    <!-- MENU -->
+
+    <nav id="navbar">
+
+      <!-- Checkbox pour faire un menu hamburger pour les petits écrans -->
+      <input id="hamburger-menu" type="checkbox" />
+      <label class='menu-button-container' for="hamburger-menu">
+        <span class='menu-button'></span>
+      </label>
+
+      <ul class="menu" >
+        <li><a [routerLink]="['/']" [routerLinkActive]="['current']" [routerLinkActiveOptions]="{exact:true}">Accueil</a></li>
+        <li><a [routerLink]="['/', 'page', 'about']" [routerLinkActive]="['current']">About</a></li>
+        <li><a [routerLink]="['/', 'page', 'works']" [routerLinkActive]="['current']">Travaux</a></li>
+        <li><a [routerLink]="['/', 'page', 'services']" [routerLinkActive]="['current']">Services</a></li>
+        <li><a [routerLink]="['/', 'page', 'contact']"  [routerLinkActive]="['current']">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Suppression du flottement -->
+    <div class="clear"></div>
+
+    <!-- Fin de large content -->
+  </div>
+
+</header>
