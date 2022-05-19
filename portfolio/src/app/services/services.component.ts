@@ -12,6 +12,16 @@ export class ServicesComponent implements OnInit {
 
   title = 'Services et compétences - Portfolio en webdevelopment - Fabienne Benoit';
 
+  intro = {
+    title: 'Mes Services et ',
+    title2: 'Compétences',
+    text: 'Actuellement en cours de formation, vous trouverez dans cette section les services que je peux déjà vous rendre ainsi que les compétences que je suis en train d’acquérir et d’approfondir.',
+    text2: ''
+  };
+
+  page = 'services';
+  anchor = '/page/services#';
+
   service?: Service; // Le ? signifie qu'il peut être undefined
   services: Service[] = [];
 

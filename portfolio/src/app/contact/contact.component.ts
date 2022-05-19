@@ -16,6 +16,16 @@ export class ContactComponent implements OnInit {
 
   title = 'Me contacter - Portfolio en webdevelopment - Fabienne Benoit';
 
+  intro = {
+    title: 'Me contacter',
+    title2: '',
+    text: 'Si mon profil vous intéresse, vous pouvez me joindre par mail, téléphone ou via le formulaire de contact ci-dessous.',
+    text2: 'Je vous répondrai avec plaisir.'
+  };
+
+  page = 'contact';
+  anchor = '/page/contact#';
+
   details: Details[] = [];
 
   contactForm = this.fb.group({
@@ -70,7 +80,7 @@ export class ContactComponent implements OnInit {
       this.contactForm.reset();
 
       // Message de confirmation d'envoi du formulaire
-      window.alert('Merci, le formulaire a bien été envoyé !');
+      window.alert('Merci, votre message a bien été envoyé !');
     }
   }
 }

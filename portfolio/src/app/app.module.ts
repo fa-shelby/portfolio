@@ -17,6 +17,7 @@ import { UpComponent } from './shared/up/up.component';
 import { ServerImgDirective } from './shared/directive/server-img.directive';
 import { ServerLinkDirective } from './shared/directive/server-link.directive';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { IntroComponent } from './shared/intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     HeaderComponent,
     UpComponent,
     ServerImgDirective,
-    ServerLinkDirective
+    ServerLinkDirective,
+    IntroComponent
   ],
   imports: [
     CommonModule,

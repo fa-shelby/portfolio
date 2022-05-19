@@ -2,35 +2,7 @@
 
 <!--================= SECTION 1 - INTRO ====================-->
 
-<section class="pages-introduction">
-
-  <!-- Ouverture de la balise délimitant la largeur du contenu -->
-  <div class="content">
-
-    <div class="col col-3-12 md-col-2-12 sm-col-1-12 xs-col-0-12">
-      <p></p>
-    </div>
-
-    <!-- Texte d'introduction -->
-    <div class="col col-6-12 md-col-8-12 sm-col-10-12 xs-col-12-12">
-
-      <h1 class="center-line">Me contacter</h1>
-
-      <p>Si mon profil vous intéresse, vous pouvez me joindre par mail, téléphone ou via le formulaire de contact ci-dessous.<br>Je vous répondrai avec plaisir.</p>
-
-    </div>
-
-    <div class="col col-3-12 last md-col-2-12 sm-col-1-12 xs-col-0-12">
-      <p></p>
-    </div>
-
-    <!-- Supression du float -->
-    <div class="clear"></div>
-
-    <!-- Fermeture de la balise content -->
-  </div>
-
-</section>
+<app-intro [intro]="intro" [page] = 'page'></app-intro>
 
 <!--============== SECTION 2 - ME CONTACTER =================-->
 
@@ -206,16 +178,4 @@
 
 <!--==================== SECTION 4 : UP ======================-->
 
-<!-- Section permettant à l'utilisateur de revenir rapidement en haut de la page -->
-<section class="up white-theme">
-
-  <h3>Revenir en haut de la page</h3>
-
-  <div class="content">
-
-    <!-- Ancre vers la barre de navigation -->
-    <a href="/page/contact#"><img class="up-icon" src="assets/images/up.png" alt="Flèche vers le haut"></a>
-
-  </div>
-
-</section>
+<app-up [anchor]="anchor" [page] = 'page'></app-up>

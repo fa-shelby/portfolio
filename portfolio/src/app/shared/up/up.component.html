@@ -1,11 +1,11 @@
 <!-- Section permettant de revenir facilement en haut de la page -->
-<section class="up">
+<section class="up" [ngClass]="{'white-theme': page == 'contact'}">
 
   <h3>Revenir en haut de la page</h3>
 
   <div class="content">
     <!-- Ancre vers la barre de navigation -->
-    <a href="/page/works#"><img class="up-icon" src="assets/images/up.png" alt="Flèche vers le haut"></a>
+    <a href="{{ anchor }}"><img class="up-icon" src="assets/images/up.png" alt="Flèche vers le haut"></a>
   </div>
 
 </section>

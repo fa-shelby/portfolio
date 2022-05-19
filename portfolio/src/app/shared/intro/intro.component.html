@@ -1,0 +1,31 @@
+<section class="pages-introduction">
+
+  <!-- Ouverture de la balise délimitant la largeur du contenu -->
+  <div class="content">
+
+    <div class="col" [ngClass]="{'col-3-12 md-col-2-12 sm-col-1-12 xs-col-0-12' : page == 'works' || page == 'contact', 'col-2-12 md-col-1-12 sm-col-0-12': page == 'services'}">
+      <p></p>
+    </div>
+
+    <!-- Petit texte d'introduction -->
+    <div class="col" [ngClass]="{'col-6-12 md-col-8-12 sm-col-10-12 xs-col-12-12' : page == 'works' || page == 'contact', 'col-8-12 md-col-10-12 sm-col-12-12': page == 'services'}">
+
+      <h1 *ngIf="page == 'services'" class="center-line services-center-line">{{ intro.title }}<br class="xs-break-text">{{ intro.title2 }}</h1>
+
+      <div [ngClass]="{'works-page-intro-text': page == 'works', 'services-page-intro-text': page == 'services'}">
+        <h1 *ngIf="page == 'works' || page == 'contact'" class="center-line">{{ intro.title }}</h1>
+        <p>{{ intro.text }}<br>{{ intro.text2 }}</p>
+      </div>
+    </div>
+
+    <div class="col last" [ngClass]="{'col-3-12 md-col-2-12 sm-col-1-12 xs-col-0-12' : page == 'works' || page == 'contact', 'col-2-12 md-col-1-12 sm-col-0-12': page == 'services'}">
+      <p></p>
+    </div>
+
+    <!-- Supression du float -->
+    <div class="clear"></div>
+
+    <!-- Fermeture de la balise content -->
+  </div>
+
+</section>

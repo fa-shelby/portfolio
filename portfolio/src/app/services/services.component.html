@@ -1,36 +1,6 @@
 <!--================= SECTION 1 - INTRO =================-->
 
-<section class="pages-introduction">
-
-  <!-- Ouverture de la balise délimitant le contenu -->
-  <div class="content">
-
-    <div class="col col-2-12 md-col-1-12 sm-col-0-12">
-      <p></p>
-    </div>
-
-    <!-- Texte d'introduction -->
-    <div class="col col-8-12 md-col-10-12 sm-col-12-12">
-
-      <h1 class="center-line services-center-line">Mes Services et <br class="xs-break-text">Compétences</h1>
-
-      <div class="services-page-intro-text">
-        <p>Actuellement en cours de formation, vous trouverez dans cette section les services que je peux déjà vous rendre ainsi que les compétences que je suis en train d’acquérir et d’approfondir.
-        </p>
-      </div>
-    </div>
-
-    <div class="col col-2-12 last md-col-1-12 sm-col-0-12">
-      <p></p>
-    </div>
-
-    <!-- Supression du float -->
-    <div class="clear"></div>
-
-    <!-- Fermeture de la balise content -->
-  </div>
-
-</section>
+<app-intro [intro]="intro" [page] = 'page'></app-intro>
 
 
 <!--============= SECTION 2 - COMPETENCES 1 =============-->
@@ -172,15 +142,4 @@
 
 <!--=============== SECTION 5 - UP ==============-->
 
-<section class="up">
-
-  <h3>Revenir en haut de la page</h3>
-
-  <div class="content">
-
-    <!-- Lien permettant de revenir facilement en haut de la page -->
-    <a href="/page/services#"><img class="up-icon" src="assets/images/up.png" alt="Flèche vers le haut"></a>
-
-  </div>
-
-</section>
+<app-up [anchor]="anchor"></app-up>

@@ -17,6 +17,16 @@ export class WorksComponent implements OnInit {
   work?: Work;
   works: Work[] = [];
 
+  intro = {
+    title: 'Mes réalisations',
+    title2: '',
+    text: 'Dans cette section, vous trouverez un aperçu des travaux réalisés dans le cadre de ma formation en développement web.',
+    text2: ''
+  };
+
+  page = 'works';
+  anchor = '/page/works#';
+
   constructor(private workService: WorkService, private titleService:Title) { }
 
   ngOnInit(): void {
