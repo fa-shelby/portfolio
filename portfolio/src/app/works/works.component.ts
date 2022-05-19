@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Work } from "../shared/model/work.model";
 import { WorkService } from "../shared/work.service";
-import { Title } from '@angular/platform-browser';
-import {TitleService} from "../shared/title.service";
+import { Title, Meta } from '@angular/platform-browser';
+import { TitleService } from "../shared/title.service";
 
 @Component({
   selector: 'app-works',
@@ -27,7 +27,13 @@ export class WorksComponent implements OnInit {
   page = 'works';
   anchor = '/page/works#';
 
-  constructor(private workService: WorkService, private titleService:Title) { }
+  constructor(private workService: WorkService, private titleService:Title, private metaService: Meta) {
+    this.addTag();
+  }
+
+  addTag() {
+    this.metaService.addTag({ name: 'description', content: 'Portfolio de Fabienne Benoit, étudiante en développement web. Laissez-moi vous présenter mes derniers projets (pages web en HTML et CSS).' });
+  }
 
   ngOnInit(): void {
     this.work = new Work(1, 'Art', 'Travail réalisé en HTML et CSS dans le cadre du cours de création de sites web statiques.', 'Reproduction d’une page sur l’art comportant plusieurs largeurs de contenu et positions.');

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,7 +44,8 @@ import { IntroComponent } from './shared/intro/intro.component';
     ReactiveFormsModule
   ],
   providers: [
-    Title
+    Title,
+    Meta
   ],
   bootstrap: [AppComponent]
 })

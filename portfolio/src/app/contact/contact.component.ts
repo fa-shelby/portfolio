@@ -3,7 +3,7 @@ import { Details } from "../shared/model/details.model";
 import { Contact } from "../shared/model/contact.model";
 import { DetailsService } from "../shared/details.service";
 import { ContactService } from "../shared/contact.service";
-import { Title } from "@angular/platform-browser";
+import { Title, Meta } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
@@ -37,7 +37,13 @@ export class ContactComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private detailsService: DetailsService, private contactService: ContactService, private titleService: Title, private router: Router, private fb: FormBuilder) { }
+  constructor(private detailsService: DetailsService, private contactService: ContactService, private titleService: Title, private metaService: Meta, private router: Router, private fb: FormBuilder) {
+    this.addTag();
+  }
+
+  addTag() {
+    this.metaService.addTag({ name: 'description', content: 'Portfolio de Fabienne Benoit, étudiante en développement web. Une question, un projet ? Contactez-moi pour en discuter.' });
+  }
 
   ngOnInit(): void {
 
