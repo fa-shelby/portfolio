@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Details } from "../shared/model/details.model";
 import { Contact } from "../shared/model/contact.model";
-import { DetailsService } from "../shared/details.service";
-import { ContactService } from "../shared/contact.service";
+import { DetailsService } from "../shared/service/details.service";
+import { ContactService } from "../shared/service/contact.service";
 import { Title, Meta } from "@angular/platform-browser";
 import { Router } from "@angular/router";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-contact',

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Work } from "../shared/model/work.model";
-import { WorkService } from "../shared/work.service";
+import { WorkService } from "../shared/service/work.service";
 import { Title, Meta } from '@angular/platform-browser';
-import { TitleService } from "../shared/title.service";
 
 @Component({
   selector: 'app-works',

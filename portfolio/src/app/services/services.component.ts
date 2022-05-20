@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Service } from "../shared/model/service.model";
-import { ServiceService } from "../shared/service.service";
+import { ServiceService } from "../shared/service/service.service";
 import { Title, Meta } from "@angular/platform-browser";
 
 @Component({

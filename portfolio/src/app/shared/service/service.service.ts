@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Work } from "./model/work.model";
-import { environment } from '../../environments/environment';
-
+import { Service } from "../model/service.model";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class WorkService {
+export class ServiceService {
 
-  private ressourceUrl = environment.apiUrl + '?type=works';
+  private ressourceUrl = environment.apiUrl + '?type=services';
 
   constructor(private http: HttpClient) { }
 
-  getAllWorks(): Observable<HttpResponse<Work[]>>{
-   return this.http.get<Work[]>(this.ressourceUrl, {observe: 'response', headers: this.getHeaders()});
+  getAllServices(): Observable<HttpResponse<Service[]>>{
+    return this.http.get<Service[]>(this.ressourceUrl, {observe: 'response', headers: this.getHeaders()});
   }
 
   private getHeaders(): HttpHeaders {
