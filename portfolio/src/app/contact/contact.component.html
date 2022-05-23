@@ -25,20 +25,20 @@
           <!-- Adresse -->
           <div>
             <img class="home" src="assets/images/home.png" alt="Icône d'une maison">
-            <p *ngIf="details">{{ details[0].details_address_line1 }}<br>{{ details[0].details_address_line2 }}</p>
+            <p *ngIf="details?.length">{{ details[0].details_address_line1 }}<br>{{ details[0].details_address_line2 }}</p>
 
           </div>
 
           <!-- Numéro de GSM -->
           <div>
             <img class="phone" src="assets/images/phone.png" alt="Icône d'un téléphone">
-            <p *ngIf="details">{{ details[0].details_number }}</p>
+            <p *ngIf="details?.length">{{ details[0].details_number }}</p>
           </div>
 
           <!-- E-mail -->
           <div>
             <img class="mail" src="assets/images/mail.png" alt="Icône d'une enveloppe">
-            <p *ngIf="details">{{ details[0].details_email }}</p>
+            <p *ngIf="details?.length">{{ details[0].details_email }}</p>
           </div>
 
           <!-- Fermeture de la première colonne de 3-12 -->
@@ -73,7 +73,12 @@
         <!-- Formulaire -->
         <form [formGroup]="contactForm" (ngSubmit)="formSubmit()">
 
-          <div class="form-content">
+          <div *ngIf="formSent" class="confirmation-message">
+            <p>Merci, votre message a bien été envoyé.</p>
+            <p>Bonne journée !</p>
+          </div>
+
+          <div *ngIf="!formSent" class="form-content">
 
             <!-- Nom -->
             <div class="spacing">

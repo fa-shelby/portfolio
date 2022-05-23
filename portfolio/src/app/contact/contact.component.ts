@@ -36,6 +36,7 @@ export class ContactComponent implements OnInit {
   });
 
   submitted = false;
+  formSent = false;
 
   constructor(private detailsService: DetailsService, private contactService: ContactService, private titleService: Title, private metaService: Meta, private router: Router, private fb: FormBuilder) {
     this.addTag();
@@ -61,7 +62,8 @@ export class ContactComponent implements OnInit {
 
     this.submitted = true;
 
-    if (this.contactForm.valid) {
+      if (this.contactForm.valid) {
+
       const contact = new Contact();
       contact.contact_firstname = this.contactForm.get('firstname')?.value;
       contact.contact_lastname = this.contactForm.get('lastname')?.value;
@@ -70,23 +72,9 @@ export class ContactComponent implements OnInit {
 
       // Créer le contact dans la DB
       this.contactService.createContact(contact)
-        .subscribe(response => () => {
-          console.log('Formulaire envoyé');
-        },
-         (error) => {
-          console.log(error);
-        },
-         () => {
-          console.log('Terminé');
-        }
-      )
-
-      // Reset form
-      this.submitted = false; // Sans le submitted = false, les champs sont en rouge car valeurs invalides
-      this.contactForm.reset();
-
-      // Message de confirmation d'envoi du formulaire
-      window.alert('Merci, votre message a bien été envoyé !');
+        .subscribe(response => {
+          this.formSent = true;
+        });
     }
   }
 }
@@ -100,4 +88,15 @@ ngModel
           console.log('Merci, le formulaire a bien été envoyé.');
         })
     }
+ */
+
+/*
+
+Ma méthode
+    // Reset form
+      this.submitted = false; // Sans le submitted = false, les champs sont en rouge car valeurs invalides
+      this.contactForm.reset();
+
+    // Message de confirmation d'envoi du formulaire
+    window.alert('Merci, votre message a bien été envoyé !');
  */

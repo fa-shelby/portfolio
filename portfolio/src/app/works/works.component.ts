@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import { Work } from "../shared/model/work.model";
 import { WorkService } from "../shared/service/work.service";
 import { Title, Meta } from '@angular/platform-browser';
@@ -13,7 +13,6 @@ export class WorksComponent implements OnInit {
 
   title = 'Travaux réalisés - Portfolio en webdevelopment - Fabienne Benoit';
 
-  work?: Work;
   works: Work[] = [];
 
   intro = {
@@ -23,8 +22,9 @@ export class WorksComponent implements OnInit {
     text2: ''
   };
 
-  page = 'works';
   anchor = '/page/works#';
+  page = 'works';
+  pages: number = 1;
 
   constructor(private workService: WorkService, private titleService:Title, private metaService: Meta) {
     this.addTag();
@@ -35,7 +35,6 @@ export class WorksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.work = new Work(1, 'Art', 'Travail réalisé en HTML et CSS dans le cadre du cours de création de sites web statiques.', 'Reproduction d’une page sur l’art comportant plusieurs largeurs de contenu et positions.');
     this.workService.getAllWorks()
       .subscribe(response => {
         this.works = response.body ?? [];

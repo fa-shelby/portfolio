@@ -18,6 +18,7 @@ import { ServerImgDirective } from './shared/directive/server-img.directive';
 import { ServerLinkDirective } from './shared/directive/server-link.directive';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IntroComponent } from './shared/intro/intro.component';
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { IntroComponent } from './shared/intro/intro.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     Title,

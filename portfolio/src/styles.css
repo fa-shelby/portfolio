@@ -1731,8 +1731,33 @@ p.hello {
   margin-bottom: 20px;
 }
 
-.m-b-mid {
+/*.m-b-mid {
   margin-bottom: 42px;
+}
+*/
+
+ul.ngx-pagination {
+  margin: 10px auto 0;
+  padding: 30px 30px 40px 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.works-pagination .ngx-pagination .current {
+  background: rgb(33, 153, 232, 0);
+}
+
+.works-pagination .ngx-pagination a:hover, .ngx-pagination button:hover {
+  background: transparent;
+  font-weight: 600;
+}
+
+.works-pagination .ngx-pagination .disabled {
+  color: #e0e0e0;
+}
+
+.works-pagination .ngx-pagination a, .ngx-pagination button {
+  color: #603D27;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2284,7 +2309,7 @@ label {
 
 label[for=message] {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   position: relative;
   top: 10px;
 }
@@ -2329,6 +2354,12 @@ input[type=submit]:hover {
   font-size: 15px;
   margin: 5px 0 15px;
   text-align: left;
+}
+
+.confirmation-message {
+  font-size: larger;
+  font-weight: bolder;
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 1200px) {

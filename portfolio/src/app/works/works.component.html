@@ -9,7 +9,7 @@
 <!-- Section 2 : présentation des 3 premiers projets -->
 
 <section class="projects-gallery tan-theme">
-  <div *ngFor="let work of works; let i = index">
+  <div *ngFor="let work of works | paginate: { itemsPerPage: 6, currentPage: pages }; let i = index">
     <!-- Balise délimitant le contenu -->
     <div class="content">
       <!-- PROJET -->
@@ -49,6 +49,11 @@
   </div>
   <!-- Suppresssion du flottement -->
   <div class="clear"></div>
+  <div class="works-pagination">
+    <pagination-controls (pageChange)="pages = $event" previousLabel="Précédente" nextLabel="Suivante"></pagination-controls>
+  </div>
+
+
   <div class="m-b-mid"></div>
 
 </section>
