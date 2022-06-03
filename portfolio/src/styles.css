@@ -592,7 +592,7 @@ br.xs-break-text {
 }
 
 @media screen and (max-width: 1200px) {
-  .homepage-intro,
+  .homepage-background,
   .homepage-intro-background,
   .black-layer {
     height: 570px;
@@ -625,7 +625,7 @@ br.xs-break-text {
 }
 
 @media screen and (max-width: 992px) {
-  .homepage-intro,
+  .homepage-background,
   .homepage-intro-background,
   .black-layer {
     height: 600px;
